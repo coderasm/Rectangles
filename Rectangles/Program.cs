@@ -18,6 +18,7 @@ namespace Rectangles
     static void Main(string[] args)
     {
       int NUM_OF_RECTS = 5;
+      //create rectangles
       RectEZ[] rectangles = {
         new RectEZ(2, 3),
         new RectEZ(4, 5),
@@ -25,23 +26,27 @@ namespace Rectangles
         new RectEZ(6, 2),
         new RectEZ(3, 5)
       };
-
+      //initialize perimeter and area arrays
       double[] perimeters = new double[NUM_OF_RECTS];
       double[] areas = new double[NUM_OF_RECTS];
+      //loop over rectangles, calculate and store area and perimeter, then print
       for (int i = 0; i < NUM_OF_RECTS; i++)
       {
         perimeters[i] = rectangles[i].perimeter();
         areas[i] = rectangles[i].area();
         rectangles[i].print();
       }
+      //sort perimeters and areas
       Array.Sort(perimeters);
       Array.Sort(areas);
+      //print perimeters
       Console.Write("Perimeters Ascending: ");
       foreach (var perimiter in perimeters)
       {
         Console.Write(perimiter + ", ");
       }
       Console.WriteLine();
+      //print areas
       Console.Write("Areas Ascending: ");
       foreach (var area in areas)
       {
